@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const dburl = 'mongodb://localhost:27017/contora'
+const dburl = 'mongodb+srv://yosh_dasturchi:11052008ozod@cluster0.qih2a9m.mongodb.net/contora'
 const connectDB = async () => {
     await mongoose.connect(dburl, {
         useNewUrlParser : true,
