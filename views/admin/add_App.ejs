@@ -1,0 +1,68 @@
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+
+            <!-- end page-title -->
+
+            <div class="row " style="justify-content: center;">
+                <div class="col-lg-10 mt-4">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Kontora qo'shish</h4>
+                            <p class="sub-title">Parsley is a javascript form validation
+                                library. It helps you provide your users with feedback on their form
+                                submission before sending it to your server.</p>
+                            <form action="/create/app/" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>Ilova nomi</label>
+                                    <textarea rows="3" type="text" name="name" class="form-control"
+                                        data-parsley-minlength="3" required placeholder="Ilova Nomi"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ilova yuklash link</label>
+                                    <textarea rows="3" type="text" name="downloadUrl" class="form-control"
+                                        data-parsley-minlength="5" required placeholder="https://chatgpt.com/c/6722097d-1430-800b-bb2b-e2985b511616"></textarea>
+                                </div>
+                                
+                           
+                             
+                              
+                                <div class="input-group mb-3 pb-3 mt-2">
+                                    <div class="file-upload" style="width: 100%;">
+                                        <div class="image-upload-wrap">
+                                            <input name="photo" class="file-upload-input" class="form-control"
+                                                type="file" onchange="readURL(this);" required />
+                                            <div class="drag-text">
+                                                <h3>Ilova  Rasmi</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image" />
+                                            <div class="image-title-wrap">
+                                                <button type="button" onclick="removeUpload()" class="remove-image">
+                                                    O'chirish <span class="image-title">Rasmni yuklash</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    Submit
+                                </button>
+                                <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                    Cancel
+                                </button>
+                        </div>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div> <!-- end row -->
+</div>
+<!-- content -->

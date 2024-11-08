@@ -1,0 +1,22 @@
+<h1>Sizning sorovingiz boyicha topilgan malumotlar</h1>
+<%data.map(item=>{%>
+    <div class="book">
+        <img src="Uploads/books/<%=item.photo  %>" alt="">
+        <h1>Name : <%=item.title %>
+        </h1>
+        <div class="on-hover">
+            <p>Author: <%=item.author %>
+            </p>
+            <p>Soni: <%=item.quantity %>
+            </p>
+            <p>Kategoryasi : <%=item.bookCategory %>></p>
+            <form action="/request/create" method="post">
+                <textarea name="book"><%=item._id  %></textarea>
+                <textarea name="institut"><%=studentcookie.institut  %></textarea>
+                <textarea name="user"><%=studentcookie._id  %></textarea>
+
+                <button type="submit">Get Book</button>
+            </form>
+        </div>
+    </div>
+    <%})%>

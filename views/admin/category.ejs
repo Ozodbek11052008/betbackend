@@ -1,0 +1,444 @@
+<div class="content-page">
+  <!-- Start content -->
+  <div class="content">
+    <div class="container-fluid">
+      <!-- end page-title -->
+      <div class="row">
+        <h4 class="ml-5" style="font-weight: 600"></h4>
+        bugungi online navbatlar ro'yhati
+        </h4>
+        <div class="mt-4" style="
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items: center;
+          ">
+
+
+          <div class="background">
+            <div class="container">
+              <div class="panel pricing-table">
+
+                <div class="pricing-plan">
+
+                  <ion-icon name="alarm-outline"></ion-icon>
+                  <h2 class="pricing-header patienttitle">kasal nomi</h2>
+                  <h2 class="servicetitle">Service Nomi</h2>
+                  <div class="tick" data-did-init="handleTickInit">
+                    <div data-repeat="true" data-layout="horizontal center fit"
+                      data-transform="preset(d, h, m, s) -> delay">
+                      <div class="tick-group">
+                        <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+                          <span data-view="flip"></span>
+                        </div>
+
+                        <span data-key="label" data-view="text" class="tick-label"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#/" class="pricing-button">Qabul qilish</a>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+          <style>
+            html {
+              box-sizing: border-box;
+              font-family: 'Open Sans', sans-serif;
+            }
+
+            *,
+            *:before,
+            *:after {
+              box-sizing: inherit;
+            }
+
+            .background {
+              padding: 0 25px 25px;
+              position: relative;
+              width: 100%;
+            }
+
+            .background::after {
+              content: '';
+              background: #60a9ff;
+              background: -moz-linear-gradient(top, #60a9ff 0%, #4394f4 100%);
+              background: -webkit-linear-gradient(top, #60a9ff 0%, #4394f4 100%);
+              background: linear-gradient(to bottom, #60a9ff 0%, #4394f4 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#60a9ff', endColorstr='#4394f4', GradientType=0);
+              height: 350px;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 100%;
+              z-index: 1;
+            }
+
+            @media (min-width: 900px) {
+              .background {
+                padding: 0 0 25px;
+              }
+            }
+
+            .container {
+              margin: 0 auto;
+              padding: 50px 0 0;
+              max-width: 960px;
+              width: 100%;
+            }
+
+            .panel {
+              background-color: #fff;
+              border-radius: 10px;
+              padding: 15px 25px;
+              position: relative;
+              width: 100%;
+              z-index: 10;
+            }
+
+            .pricing-table {
+              box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+              display: flex;
+              flex-direction: column;
+            }
+
+            @media (min-width: 900px) {
+              .pricing-table {
+                flex-direction: row;
+              }
+            }
+
+            .pricing-table * {
+              text-align: center;
+              text-transform: uppercase;
+            }
+
+            .pricing-plan {
+              border-bottom: 1px solid #e1f1ff;
+              padding: 25px;
+            }
+
+            .pricing-plan:last-child {
+              border-bottom: none;
+            }
+
+            @media (min-width: 900px) {
+              .pricing-plan {
+                border-bottom: none;
+                border-right: 1px solid #e1f1ff;
+                flex-basis: 100%;
+                padding: 25px 50px;
+              }
+
+              .pricing-plan:last-child {
+                border-right: none;
+              }
+            }
+
+            .pricing-img {
+              margin-bottom: 25px;
+              max-width: 100%;
+            }
+
+            .pricing-header {
+              color: #269aff;
+              font-weight: 600;
+              letter-spacing: 1px;
+            }
+
+            .pricing-features {
+              color: #016FF9;
+              font-weight: 600;
+              letter-spacing: 1px;
+              margin: 50px 0 25px;
+            }
+
+            .pricing-features-item {
+              border-top: 1px solid #e1f1ff;
+              font-size: 12px;
+              line-height: 1.5;
+              padding: 15px 0;
+            }
+
+            .pricing-features-item:last-child {
+              border-bottom: 1px solid #e1f1ff;
+            }
+
+            .pricing-price {
+              color: #016FF9;
+              display: block;
+              font-size: 32px;
+              font-weight: 700;
+            }
+
+            .pricing-button {
+              border: 1px solid #9dd1ff;
+              border-radius: 10px;
+              color: #348EFE;
+              display: inline-block;
+              margin: 25px 0;
+              padding: 15px 35px;
+              text-decoration: none;
+              transition: all 150ms ease-in-out;
+            }
+
+            .pricing-button:hover,
+            .pricing-button:focus {
+              background-color: #e1f1ff;
+            }
+
+            .pricing-button.is-featured {
+              background-color: #48aaff;
+              color: #fff;
+            }
+
+            .pricing-button.is-featured:hover,
+            .pricing-button.is-featured:active {
+              background-color: #269aff;
+            }
+
+            ion-icon {
+              font-size: 162px;
+              color: #269aff;
+            }
+          </style>
+
+        </div>
+
+        <style>
+          .tick {
+            padding-bottom: 1em;
+            font-size: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+              Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+          }
+
+          .tick-label {
+            font-size: 0.375em;
+            text-align: center;
+          }
+
+          .tick-group {
+            margin: 0 0.25em;
+            text-align: center;
+          }
+        </style>
+
+ 
+ 
+        <% let currentTime=new Date(); %>
+
+          <!-- Example of listing patients -->
+
+          <!-- Countdown section -->
+          <div id="countdown"></div>
+
+          <script>
+
+            const currentTime = new Date();
+      
+            // Build an array of patient visit times from server-side data
+            const patients = [];
+        <% navbat.forEach(item => { %>
+              patients.push({
+                name: '<%= item.name %>',
+                time: new Date('<%= item.time %>'),
+                service: '<%= item.service %>'
+              });
+        <% }) %>;
+
+            // Function to calculate time difference
+            function getTimeDifference(visitTime) {
+              return visitTime - currentTime;
+            }
+            console.log(patients);
+
+            // Function to find the closest patient
+            function getClosestPatient(patients) {
+              let closestPatient = null;
+              let minTimeDifference = Infinity;
+
+              for (let patient of patients) {
+                const timeDifference = getTimeDifference(patient.time);
+
+                if (timeDifference > 0 && timeDifference < minTimeDifference) {
+                  minTimeDifference = timeDifference;
+                  closestPatient = patient;
+                }
+              }
+
+              return closestPatient;
+            }
+
+            // Find the closest patient
+            const closestPatient = getClosestPatient(patients);
+            let servicetitle = document.querySelector(".servicetitle");
+           servicetitle.textContent = `${closestPatient.service}`
+            console.log(closestPatient, servicetitle);
+
+
+            // If there is a closest patient, use their visit time for the countdown
+            if (closestPatient) {
+              console.log(`The next patient is ${closestPatient.name}, arriving at ${closestPatient.time}`);
+
+              // Initialize the Tick countdown with the closest patient's visit time
+              function handleTickInit(tick) {
+                Tick.count.down(closestPatient.time).onupdate = function (value) {
+                  tick.value = value;
+                };
+              }
+
+
+            } else {
+              console.log('No upcoming patients.');
+            }
+
+
+            function handleTickInit(tick) {
+              // Uncomment to set labels to different language ( in this case Dutch )
+              /*
+      var locale = {
+          YEAR_PLURAL: 'Jaren',
+          YEAR_SINGULAR: 'Jaar',
+          MONTH_PLURAL: 'Maanden',
+          MONTH_SINGULAR: 'Maand',
+          WEEK_PLURAL: 'Weken',
+          WEEK_SINGULAR: 'Week',
+          DAY_PLURAL: 'Dagen',
+          DAY_SINGULAR: 'Dag',
+          HOUR_PLURAL: 'Uren',
+          HOUR_SINGULAR: 'Uur',
+          MINUTE_PLURAL: 'Minuten',
+          MINUTE_SINGULAR: 'Minuut',
+          SECOND_PLURAL: 'Seconden',
+          SECOND_SINGULAR: 'Seconde',
+          MILLISECOND_PLURAL: 'Milliseconden',
+          MILLISECOND_SINGULAR: 'Milliseconde'
+      };
+  
+      for (var key in locale) {
+          if (!locale.hasOwnProperty(key)) { continue; }
+          tick.setConstant(key, locale[key]);
+      }
+      */
+
+              var nextYear = new Date().getFullYear() + 1;
+
+
+              Tick.count.down(closestPatient.time).onupdate = function (value) {
+                tick.value = value;
+              };
+            }
+
+          </script>
+          <div class="col-12 table-responsive">
+            <div class="card m-b-30">
+              <div class="card-body">
+                <p class="sub-title ml-3">
+                  Malumotlar malumotlar bazasidan to'gridan to'g'ri
+                  kelmoqda.Malumotlar oxirgi qo'shilgan tartibi bo'yicha chiqmoqda
+                </p>
+
+
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  width: 100%;
+                ">
+                  <thead>
+                    <tr>
+                      <th>Doctor</th>
+                      <th>Phone</th>
+<th>status</th>
+                      <th>name</th>
+                      <th>service</th>
+                      <th>time</th>
+                      <th>params</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <%navbat.map(item=>{%>
+                      <% console.log(item) %>
+                        <tr>
+                          <td>
+                            <%=item.doctor%>
+                          </td>
+                          <td>
+                            <%=item.phone%>
+                          </td>
+                          <td>
+                            <%=item.status%>
+                          </td>
+                          <td>
+                            <%=item.name%>
+                          </td>
+                          <td>
+                            <%=item.service%>
+                          </td>
+ 
+
+                          <td>
+
+                          
+                            <%
+                            let date = new Date(item.createdAt);
+                            let options = { 
+                                weekday: 'long', 
+                                year: 'numeric', 
+                                month: 'long', 
+                                day: 'numeric'
+                            };
+                            let timeOptions = { 
+                                hour: '2-digit', 
+                                minute: '2-digit', 
+                                second: '2-digit',
+                                hour12: false // 24-hour format
+                            };
+                            let prettyDate = date.toLocaleDateString('ru-RU', options); // 'en-GB' uses 24-hour format by default
+                            let prettyTime = date.toLocaleTimeString('ru-RU', timeOptions);
+                        
+                            let formattedDateTime = `${prettyDate}, ${prettyTime}`;
+                        %>
+                        
+                        <p><%= formattedDateTime %></p>
+                          </td>
+                          <td class="params">
+
+                            <form action="/navbat/delete/<%= item._id%>?_method=DELETE" style="display:inline-block;"
+                              method="post">
+                              <button type="submit" class="btn btn-outline-danger waves-effect waves-light">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </form>
+                          </td>
+                        </tr>
+                        <%})%>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- container-fluid -->
+  </div>
+  <!-- content -->
+
+  <footer class="footer">
+    © 2019 - 2020 Stexo
+    <span class="d-none d-sm-inline-block">
+      - Crafted with <i class="mdi mdi-heart text-danger"></i> by
+      Themesdesign</span>.
+  </footer>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

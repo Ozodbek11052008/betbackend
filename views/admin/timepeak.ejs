@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Time Countdown</title>
+</head>
+<body>
+    <% let currentTime = new Date(); %>
+
+    <!-- Example of listing patients -->
+    <% navbat.forEach(item => { %>
+        <div>
+            <h2>Patient: <%= item.name %></h2>
+            <p>Visit Time: <%= item.time %></p>
+        </div>
+    <% }) %>
+
+    <!-- Countdown section -->
+    <div id="countdown"></div>
+
+    <script>
+        const currentTime = new Date();
+
+        // Build an array of patient visit times from server-side data
+        const patients = [];
+        <% navbat.forEach(item => { %>
+            patients.push({
+                name: '<%= item.name %>',
+                time: new Date('<%= item.time %>')
+            });
+        <% }) %>;
+
+        // Function to calculate time difference
+        function getTimeDifference(visitTime) {
+            return visitTime - currentTime;
+        }
+
+        // Function to find the closest patient
+        function getClosestPatient(patients) {
+            let closestPatient = null;
+            let minTimeDifference = Infinity;
+
+            for (let patient of patients) {
+                const timeDifference = getTimeDifference(patient.time);
+
+                if (timeDifference > 0 && timeDifference < minTimeDifference) {
+                    minTimeDifference = timeDifference;
+                    closestPatient = patient;
+                }
+            }
+
+            return closestPatient;
+        }
+
+        // Find the closest patient
+        const closestPatient = getClosestPatient(patients);
+
+        // If there is a closest patient, use their visit time for the countdown
+        if (closestPatient) {
+            console.log(`The next patient is ${closestPatient.name}, arriving at ${closestPatient.time}`);
+
+            // Initialize the Tick countdown with the closest patient's visit time
+            function handleTickInit(tick) {
+                Tick.count.down(closestPatient.time).onupdate = function (value) {
+                    tick.value = value;
+                };
+            }
+
+            document.getElementById('countdown').innerHTML = `Counting down to ${closestPatient.name}'s visit at ${closestPatient.time}`;
+        } else {
+            console.log('No upcoming patients.');
+            document.getElementById('countdown').innerHTML = 'No upcoming patients.';
+        }
+    </script>
+      <script src="/plugins/flip/flip.min.js"></script>
+      <link rel="stylesheet" href="/plugins/flip/flip.min.css">
+</body>
+</html>

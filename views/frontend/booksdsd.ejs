@@ -1,0 +1,32 @@
+<section class="all_books">
+    <form action="/search" class="search-book">
+        <input type="text" placeholder="kitob izlash" name="search" >   
+        <button>Search</button>
+    </form>
+ 
+    <h1 class="heading">Kitoblar Royhati</h1>
+    <div class="books-wrapper">
+
+        <%books.map(item=>{%>
+            <div class="book">
+                <img src="Uploads/books/<%=item.photo  %>" alt="">
+                <h1>Name : <%=item.title %>
+                </h1>
+                <div class="on-hover">
+                    <p>Author: <%=item.author %>
+                    </p>
+                    <p>Soni: <%=item.quantity %>
+                    </p>
+                    <p>Kategoryasi : <%=item.bookCategory %>></p>
+                    <form action="/request/create" method="post">
+                        <textarea name="book"><%=item._id  %></textarea>
+                        <textarea name="institut"><%=studentcookie.institut  %></textarea>
+                        <textarea name="user"><%=studentcookie._id  %></textarea>
+
+                        <button type="submit">Get Book</button>
+                    </form>
+                </div>
+            </div>
+            <%})%>
+    </div>
+</section>

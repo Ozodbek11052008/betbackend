@@ -1,0 +1,153 @@
+<style>
+    #visitsChart {
+        max-width: 90%;
+        max-height: 70vh;
+        margin-bottom: 30px;
+    }
+
+    /* Limit the size of the pie chart */
+    #servicesChart {
+        max-width: 40%;
+        /* Set smaller width for pie chart */
+        max-height: 70vh;
+        /* Set smaller height for pie chart */
+        max-height: 700px;
+    }
+
+    .chart-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <h4 class="page-title">Dashboard</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Stexo</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end page-title -->
+
+            <div class="row">
+
+
+
+
+
+            </div>
+            <!-- end row -->
+            <% console.log(serviceCounts) %>
+                <!-- START ROW -->
+                <div class="row chart-wrapper">
+                    <div class="col-xl-12">
+                        <div class="card m-b-30">
+                            <div class="card-body">
+
+                                <h4 class="mt-0 header-title mb-4">Xisobot va bugalteria <a href="/add/admin">
+
+                                    </a></h4>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Xar faslgi hisobot</h2>
+                    <canvas id="visitsChart" width="400" height="200"></canvas>
+
+                    <h2>Servicelardan foydalanish </h2>
+                    <canvas id="servicesChart" width="400" height="200"></canvas>
+
+                </div>
+                <!-- END ROW -->
+
+        </div>
+        <!-- container-fluid -->
+
+    </div>
+    <!-- content -->
+
+    <footer class="footer">
+        © 2019 - 2020 Stexo <span class="d-none d-sm-inline-block"> - Crafted with <i
+                class="mdi mdi-heart text-danger"></i> by Themesdesign</span>.
+    </footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const serviceCounts =  <%- JSON.stringify(serviceCounts) %>;
+    
+    console.log(serviceCounts);
+
+    // Chart 1: Patient Visits per Season
+    const visitsCtx = document.getElementById('visitsChart').getContext('2d');
+    const visitsChart = new Chart(visitsCtx, {
+        type: 'bar', // Bar chart for seasonal visits
+        data: {
+            labels: ['winter', 'spring', 'summer', 'autumn'],
+            datasets: [{
+                label: 'Number of Patients',
+                data: [120, 200,400,100], // Example data for visits in each season
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Chart 2: Patient Services Usage (Pie Chart)
+    const servicesCtx = document.getElementById('servicesChart').getContext('2d');
+    const servicesChart = new Chart(servicesCtx, {
+        type: 'pie', // Pie chart for service usage
+        data: {
+            labels:Object.keys(serviceCounts),
+            datasets: [{
+                label: 'Service Usage',
+                data: Object.values(serviceCounts), // Example data for services
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

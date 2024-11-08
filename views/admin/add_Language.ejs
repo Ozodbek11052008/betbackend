@@ -1,0 +1,47 @@
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+
+            <!-- end page-title -->
+
+            <div class="row " style="justify-content: center;">
+                <div class="col-lg-10 mt-4">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Kontora qo'shish</h4>
+                            <p class="sub-title">Parsley is a javascript form validation
+                                library. It helps you provide your users with feedback on their form
+                                submission before sending it to your server.</p>
+                            <form action="/app/<%=appData._id  %>/language" method="POST" >
+
+
+
+
+
+                                <input type="text"  name="languageCode" value=" <%=language%>">
+
+                                <input type="text" name="appNameTranslation" value="<%=appData.name  %>"
+                                   >
+                                <div class="form-group">
+                                    <label>To'liq matnini kiriting</label>
+                                    <textarea data-parsley-minlength="50" required id="elm1" name="description"
+                                        class="form-control" rows="5"> </textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    Submit
+                                </button>
+                                <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                    Cancel
+                                </button>
+                        </div>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div> <!-- end row -->
+</div>
+<!-- content -->
