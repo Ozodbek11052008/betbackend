@@ -1,5 +1,6 @@
 const AppModdel = require("../Models/app")
-
+const fs = require('fs')
+const path = require('path')
 const App = {
 
     createApp: async (req, res) => {
@@ -24,9 +25,19 @@ const App = {
     }
     ,
     deleteApp: async (req, res) => {
-        await AppModdel.findByIdAndDelete(req.params.id)
-            .then(data => res.redirect("/apps"))
-            .catch(err => res.send(err))
+    const data =    await AppModdel.findByIdAndDelete(req.params.id);
+    
+
+    if (data.photo) {
+        fs.unlink(path.join(__dirname.replace("Controller", "Public/Uploads/"), data.photo), (err) => {
+            if (err) {
+                throw err
+            }
+        })
+    }
+    await AppModdel.findByIdAndDelete(req.params.id)
+    .then(data => res.redirect("/apps"))
+    .catch(err => res.send(err))
     },
     getAddApp: async (req, res) => {
 

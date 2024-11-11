@@ -7,10 +7,7 @@ const adminSchema = mongoose.Schema({
         unique:true,
         minlength: 5
     },
-    superAdmin: {
-        type: Boolean,
-        required: true
-    },
+  
     password: {
         type: String,
         required: true
