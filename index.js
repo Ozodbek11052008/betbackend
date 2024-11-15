@@ -47,7 +47,9 @@ console.log(__dirname);
 
 let cookieParser = require('cookie-parser');
 app.use(cookieParser());
-
+app.use(cors({
+  origin: ['https://888starz-uz.netlify.app/'] // Allow Netlify domain
+}));
 // Function to calculate the time difference in hours
 const getHoursDifference = (date1, date2) => {
   const diffInMs = Math.abs(date2 - date1);
