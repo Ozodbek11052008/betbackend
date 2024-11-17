@@ -7,6 +7,8 @@ const path = require('path')
 const cors = require('cors')
 const mongoose = require("mongoose")
 connectDB()
+
+
 const App = require("./Models/app")
 
 const Layout = require('express-ejs-layouts')
@@ -25,9 +27,29 @@ app.use(Layout)
 
 app.use('/assets', express.static(path.join(__dirname, 'Public/assets')))
 app.use('/plugins', express.static(path.join(__dirname, 'Public/plugins')))
-app.use('/uploads', express.static(path.join(__dirname, 'Public/uploads')))
+app.use('/Uploads', express.static(path.join(__dirname, 'Public/Uploads')))
 
-app.use(cors())
+// Route to Get App Info by Name
+app.get('/app/info/:name', async (req, res) => {
+  try {
+    const appName = decodeURIComponent(req.params.name); // Decode name
+      const appData = await App.findOne({ name: appName });
+
+      if (appData) {
+          res.json(appData); // Return the app data as JSON
+      } else {
+          res.status(404).json({ error: 'App not found' });
+      }
+  } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+app.use(cors({
+  origin: 'https://https888starz-uz.com/' // Replace with your front-end's origin
+}));
 
 app.use(express.json(), express.urlencoded({ extended: true }))
 // for read json 
