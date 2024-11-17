@@ -42,7 +42,7 @@ router.delete("/delete/app/:id", deleteApp)
 router.get('/apps', auth, getApp)
 router.get("/create/contora", auth, getAddApp)
 router.post('/app/:appId/language', auth, appController.addTranslation);
-router.get('/app/:appId', appController.getAppWithTranslations);
+router.get('/app/:appName', appController.getAppWithTranslations);
 router.get('/app/lang/:lang/:id', getAddLangApp)
 // router.get("/json/apps/:id", getJsonSpecificId)
 

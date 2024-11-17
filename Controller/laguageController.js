@@ -31,19 +31,34 @@ exports.addTranslation = async (req, res) => {
     }
   };
   
-  // Get an app with all translations
-  exports.getAppWithTranslations = async (req, res) => {
-    try {
-      const { appId } = req.params;
-  
-      // Find the app by ID and populate translations
-      const app = await App.findById(appId).populate('languages');
-      if (!app) {
-        return res.status(404).json({ message: 'App not found' });
-      }
-  
-      res.status(200).json({ app });
-    } catch (error) {
-      res.status(500).json({ message: 'Error retrieving app', error });
+// Get an app with all translations by name
+exports.getAppWithTranslations = async (req, res) => {
+  try {
+    const { appName } = req.params;
+
+    // Find the app by name and populate translations
+    const app = await App.findOne({ name: appName }).populate('languages');
+    if (!app) {
+      return res.status(404).json({ message: 'App not found' });
     }
-  };
+
+    res.status(200).json({ app });
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving app', error });
+  }
+};// Get an app with all translations by name
+exports.getAppWithTranslations = async (req, res) => {
+  try {
+    const { appName } = req.params;
+
+    // Find the app by name and populate translations
+    const app = await App.findOne({ name: appName }).populate('languages');
+    if (!app) {
+      return res.status(404).json({ message: 'App not found' });
+    }
+
+    res.status(200).json({ app });
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving app', error });
+  }
+};
